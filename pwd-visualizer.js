@@ -28,12 +28,19 @@ function PasswordValidator(passwordElem, confirmElem) {
 	$cfrmElem.blur(function(e) { popin(this); });
 	$cfrmElem.keyup(function(e) { confirmCheck($pwdElem, this) });
 
-	var rules = {
+	/*var rules = {
 		lower: /[a-z]+/,
 		upper: /[A-Z]+/,
 		num: /[0-9]+/,
 		special: /[\!@#\€\%\&\/()\=\?\+\^\*]+/
-	}
+	}*/
+
+	var rules = {
+        lower: '[a-z]',
+        upper: '[A-Z]',
+        num: '[0-9]',
+        special: '[\-!\"§\$%@&\/\(\)=\?\+\*~#\'_:\.,\^;¤\[\\]\{\}£€<>\|]',
+    }
 
 	function isValid() {
 
